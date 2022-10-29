@@ -10,4 +10,5 @@ sealed class NavigationDrinks( val route : String){
     object AboutUs:NavigationDrinks("aboutus")
     object Lemon:NavigationDrinks("lemon")
     object Image:NavigationDrinks("image")
+    object HotDrinksPage:NavigationDrinks("hot")
 }

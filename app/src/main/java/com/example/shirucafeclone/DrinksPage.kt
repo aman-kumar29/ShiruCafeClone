@@ -40,6 +40,9 @@ fun DrinkNavigation() {
         composable(NavigationDrinks.Animated.route) {
             SplashScreenPage(navController)
         }
+        composable(NavigationDrinks.HotDrinksPage.route) {
+            HotPage(navController)
+        }
         composable(NavigationDrinks.Image.route) {
             Image()
         }
@@ -53,13 +56,13 @@ fun DrinkNavigation() {
             SelectDrinkColdPage(navController)
         }
         composable(NavigationDrinks.SelectDrinkHot.route) {
-            SelectDrinkHotPage()
+            SelectDrinkHotPage(navController)
         }
         composable(NavigationDrinks.Info.route) {
             InfoPage(navController)
         }
         composable(NavigationDrinks.AboutUs.route) {
-            AboutUsPage()
+            AboutUsPage(navController)
         }
         composable(NavigationDrinks.Lemon.route) {
             LemonPage(navController)
@@ -99,9 +102,13 @@ fun HomeScreen(navController: NavHostController) {
                 ) {
 
                     Spacer(modifier = Modifier.width(5.dp))
-                    Button(onClick = {
-                        navController.navigate("getdrinks")
-                    }, modifier = Modifier.fillMaxWidth()) {
+                    Button(
+                        onClick = {
+                            navController.navigate("getdrinks")
+                        }, modifier = Modifier
+                            .fillMaxWidth()
+                            .clip(RoundedCornerShape(150.dp))
+                    ) {
                         Icon(Icons.Outlined.Coffee, "menu")
                         Spacer(modifier = Modifier.width(16.dp))
                         Text(text = "Get Drink")
@@ -136,7 +143,10 @@ fun HomeScreen(navController: NavHostController) {
         Column(
             Modifier
                 .fillMaxWidth()
-                .fillMaxHeight(), verticalArrangement = Arrangement.Bottom) {
+                .fillMaxHeight(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom
+        ) {
             Row(
                 verticalAlignment = Alignment.Bottom,
                 modifier = Modifier.background(Color.White)
@@ -145,9 +155,9 @@ fun HomeScreen(navController: NavHostController) {
                     Icon(
                         Icons.Outlined.Home, contentDescription = null,
                         modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
+                            .padding(horizontal = 5.dp)
+                            .height(50.dp)
+                            .width(50.dp)
                             .clickable { navController.navigate("home") }
                     )
                 }
@@ -155,9 +165,9 @@ fun HomeScreen(navController: NavHostController) {
                     Icon(
                         Icons.Outlined.Info, contentDescription = null,
                         modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
+                            .padding(horizontal = 5.dp)
+                            .height(50.dp)
+                            .width(50.dp)
                             .clickable { navController.navigate("info") },
                     )
                 }
@@ -165,7 +175,7 @@ fun HomeScreen(navController: NavHostController) {
                     Icon(
                         Icons.Outlined.QuestionAnswer, contentDescription = null,
                         modifier = Modifier
-                            .padding(horizontal = 2.dp)
+                            .padding(horizontal = 5.dp)
                             .height(50.dp)
                             .width(50.dp)
                             .clickable { navController.navigate("aboutus") }
@@ -455,10 +465,8 @@ fun SelectDrinkColdPage(navController: NavHostController) {
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun SelectDrinkHotPage() {
+fun SelectDrinkHotPage(navController: NavHostController) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
-
-
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -483,82 +491,114 @@ fun SelectDrinkHotPage() {
                 )
             }
         }
+
         LazyVerticalGrid(
-            cells = GridCells.Adaptive(150.dp),
+            cells = GridCells.Adaptive(175.dp),
             content = {
                 items(6) { i ->
                     Box(
                         modifier = Modifier
-                            .padding(8.dp)
-                            .aspectRatio(2f)
+//                        .padding(8.dp)
+                            .aspectRatio(0.9f)
                             .clip(RoundedCornerShape(15.dp)),
                         contentAlignment = Alignment.Center
                     ) {
-
                         when (i) {
-                            0 ->
-                                Column(
-                                    horizontalAlignment = Alignment.CenterHorizontally
-                                ) {
-
-                                    Image(
-                                        painter = painterResource(id = R.drawable.blackcoffee),
-                                        contentDescription = null,
-                                        modifier = Modifier.fillMaxWidth()
-                                    )
-                                    Text(text = "Black Coffee")
-                                }
-                            1 -> Column(
-                                horizontalAlignment = Alignment.CenterHorizontally
+                            0 -> Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
+                                )
                             ) {
 
-                                Image(
-                                    painter = painterResource(id = R.drawable.blacktea),
-                                    contentDescription = null, modifier = Modifier.fillMaxWidth()
+                                Image(painter = painterResource(id = R.drawable.blackcoffee),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp), contentScale = ContentScale.Crop)
+                                Text(text = "Black Coffee")
+                            }
+                            1 -> Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
                                 )
+                            ) {
+
+                                Image(painter = painterResource(id = R.drawable.blacktea),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp), contentScale = ContentScale.Crop)
                                 Text(text = "Black Tea")
                             }
                             2 -> Column(
-                                horizontalAlignment = Alignment.CenterHorizontally
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
+                                )
                             ) {
 
-                                Image(
-                                    painter = painterResource(id = R.drawable.blackcoffee),
-                                    contentDescription = null
-                                )
-                                Text(text = "Ginger Tea")
-                            }
-                            3 -> Column(
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-
-                                Image(
-                                    painter = painterResource(id = R.drawable.greentea),
-                                    contentDescription = null, modifier = Modifier.fillMaxWidth()
-                                )
+                                Image(painter = painterResource(id = R.drawable.greentea),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp))
                                 Text(text = "Green Tea")
                             }
-                            4 -> Column(
-                                horizontalAlignment = Alignment.CenterHorizontally
+                            3 -> Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
+                                )
                             ) {
 
-                                Image(
-                                    painter = painterResource(id = R.drawable.masalatea),
-                                    contentDescription = null, modifier = Modifier.fillMaxSize()
-                                )
-                                Text(text = "Masala Tea")
+                                Image(painter = painterResource(id = R.drawable.gingertea),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp), contentScale = ContentScale.Crop)
+                                Text(text = "Ginger Tea")
                             }
-                            5 -> Column(
-                                horizontalAlignment = Alignment.CenterHorizontally
-                            ) {
-                                Image(
-                                    painter = painterResource(id = R.drawable.lemontea),
-                                    contentDescription = null
+                            4 -> Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
                                 )
+                            ) {
+
+                                Image(painter = painterResource(id = R.drawable.lemontea),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp))
                                 Text(text = "Lemon Tea")
                             }
+                            else -> Column(
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                modifier = Modifier.border(
+                                    BorderStroke(1.dp, Green100)
+                                )
+                            ) {
+
+                                Image(painter = painterResource(id = R.drawable.masalatea),
+                                    contentDescription = null,
+                                    modifier = Modifier
+                                        .clickable { navController.navigate("hot") }
+                                        .height(130.dp)
+                                        .width(130.dp))
+                                Text(text = "Masala Tea")
+                            }
+
                         }
+
                     }
+
                 }
             })
     }
@@ -567,178 +607,202 @@ fun SelectDrinkHotPage() {
 
 @Composable
 fun InfoPage(navController: NavHostController) {
-    Column(
-        modifier = Modifier.background(MaterialTheme.colors.primary),
-        verticalArrangement = Arrangement.Top
-    ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.White)
-                .border(BorderStroke(1.dp, Green100))
+    Box() {
+        Image(
+            painter = painterResource(id = R.drawable.background),
+            contentDescription = null,
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
+        Column(
+            verticalArrangement = Arrangement.Top
         ) {
-            Card(
-                elevation = 4.dp,
+            Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(50.dp)
                     .background(Color.White)
-                    .align(Alignment.CenterVertically),
+                    .border(BorderStroke(1.dp, Green100))
             ) {
-                Text(
-                    text = "I N F O",
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold,
-                    fontFamily = FontFamily.Serif,
-                    modifier = Modifier.background(
-                        Color.White
-                    ),
-                    textAlign = TextAlign.Center
-                )
-            }
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-                .clickable { true }
-                .background(color = Green50)
-        ) {
-            Column {
-                Image(
-                    modifier =
-                    Modifier
-                        .size(130.dp)
-                        .padding(8.dp),
-                    painter = painterResource(R.drawable.pineapple),
-                    contentDescription = null
-                )
-
-            }
-            Column {
-                Text(
-                    text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
-                    Modifier.padding(vertical = 10.dp)
-                )
-                Text(
-                    text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
-                )
-            }
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-                .clickable { true }
-                .background(color = Green50)
-        ) {
-            Column {
-                Image(
-                    modifier =
-                    Modifier
-                        .size(130.dp)
-                        .padding(8.dp),
-                    painter = painterResource(R.drawable.pineapple),
-                    contentDescription = null
-                )
-
-            }
-            Column {
-                Text(
-                    text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
-                    Modifier.padding(vertical = 10.dp)
-                )
-                Text(
-                    text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
-                )
-            }
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-                .clickable { true }
-                .background(color = Green50)
-        ) {
-            Column {
-                Image(
-                    modifier =
-                    Modifier
-                        .size(130.dp)
-                        .padding(8.dp),
-                    painter = painterResource(R.drawable.pineapple),
-                    contentDescription = null
-                )
-
-            }
-            Column {
-                Text(
-                    text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
-                    Modifier.padding(vertical = 10.dp)
-                )
-                Text(
-                    text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
-                )
-            }
-        }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-                .clickable { true }
-                .background(color = Green50)
-        ) {
-            Column {
-                Image(
-                    modifier =
-                    Modifier
-                        .size(130.dp)
-                        .padding(8.dp),
-                    painter = painterResource(R.drawable.pineapple),
-                    contentDescription = null
-                )
-
-            }
-            Column {
-                Text(
-                    text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
-                    Modifier.padding(vertical = 10.dp)
-                )
-                Text(
-                    text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
-                )
-            }
-        }
-    }
-    Column(
-        Modifier
-            .fillMaxWidth()
-            .fillMaxHeight(), verticalArrangement = Arrangement.Bottom) {
-        Row(
-            horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.Bottom,
-            modifier = Modifier
-                .fillMaxWidth()
-                .background(Color.White)
-        ) {
-            Box {
-                Icon(
-                    Icons.Outlined.Home, contentDescription = null,
+                Card(
+                    elevation = 4.dp,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(60.dp)
-                        .clickable { navController.navigate("home") }
-                )
+                        .height(50.dp)
+                        .background(Color.White)
+                        .align(Alignment.CenterVertically),
+                ) {
+                    Text(
+                        text = "I N F O",
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.Bold,
+                        fontFamily = FontFamily.Serif,
+                        modifier = Modifier.background(
+                            Color.White
+                        ),
+                        textAlign = TextAlign.Center
+                    )
+                }
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { true }
+            ) {
+                Column {
+                    Image(
+                        modifier =
+                        Modifier
+                            .size(130.dp)
+                            .padding(8.dp),
+                        painter = painterResource(R.drawable.orange),
+                        contentDescription = null
+                    )
+
+                }
+                Column {
+                    Text(
+                        text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
+                        Modifier.padding(vertical = 10.dp)
+                    )
+                    Text(
+                        text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
+                    )
+                }
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { true }
+            ) {
+                Column {
+                    Image(
+                        modifier =
+                        Modifier
+                            .size(130.dp)
+                            .padding(8.dp),
+                        painter = painterResource(R.drawable.orange),
+                        contentDescription = null
+                    )
+
+                }
+                Column {
+                    Text(
+                        text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
+                        Modifier.padding(vertical = 10.dp)
+                    )
+                    Text(
+                        text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
+                    )
+                }
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { true }
+            ) {
+                Column {
+                    Image(
+                        modifier =
+                        Modifier
+                            .size(130.dp)
+                            .padding(8.dp),
+                        painter = painterResource(R.drawable.orange),
+                        contentDescription = null
+                    )
+
+                }
+                Column {
+                    Text(
+                        text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
+                        Modifier.padding(vertical = 10.dp)
+                    )
+                    Text(
+                        text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
+                    )
+                }
+            }
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { true }
+            ) {
+                Column {
+                    Image(
+                        modifier =
+                        Modifier
+                            .size(130.dp)
+                            .padding(8.dp),
+                        painter = painterResource(R.drawable.orange),
+                        contentDescription = null
+                    )
+
+                }
+                Column {
+                    Text(
+                        text = "バ飲ヷバ飲ババ飲ヷバ飲ヷ",
+                        Modifier.padding(vertical = 10.dp)
+                    )
+                    Text(
+                        text = "バ飲ヷバ飲ヷバヷバ飲ヷバ飲"
+                    )
+                }
             }
         }
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .fillMaxHeight(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Bottom
+        ) {
+            Row(
+                verticalAlignment = Alignment.Bottom,
+                modifier = Modifier.background(Color.White)
+            ) {
+                Box(Modifier.padding(horizontal = 30.dp)) {
+                    Icon(
+                        Icons.Outlined.Home, contentDescription = null,
+                        modifier = Modifier
+                            .padding(horizontal = 5.dp)
+                            .height(50.dp)
+                            .width(50.dp)
+                            .clickable { navController.navigate("home") }
+                    )
+                }
+                Box(Modifier.padding(horizontal = 30.dp)) {
+                    Icon(
+                        Icons.Outlined.Info, contentDescription = null,
+                        modifier = Modifier
+                            .padding(horizontal = 5.dp)
+                            .height(50.dp)
+                            .width(50.dp)
+                            .clickable { navController.navigate("info") },
+                    )
+                }
+                Box(Modifier.padding(horizontal = 30.dp)) {
+                    Icon(
+                        Icons.Outlined.QuestionAnswer, contentDescription = null,
+                        modifier = Modifier
+                            .padding(horizontal = 5.dp)
+                            .height(50.dp)
+                            .width(50.dp)
+                            .clickable { navController.navigate("aboutus") }
+                    )
+                }
+            }
 
+        }
     }
 
 
 }
 
 @Composable
-fun AboutUsPage() {
+fun AboutUsPage(navController: NavHostController) {
     Column {
         Card(
             elevation = 5.dp, modifier = Modifier
@@ -786,20 +850,27 @@ fun AboutUsPage() {
                         .padding(start = 75.dp)
                 )
             }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier
-                    .height(200.dp)
-                    .background(color = Color.LightGray)
-            ) {
-                Text(
-                    text = "SHIRU CAFE Aim to provide unique experience to students all across the globe.",
-                    fontWeight = FontWeight.Bold, modifier = Modifier
-                        .padding(horizontal = 50.dp)
-                        .padding(vertical = 25.dp)
+            Box() {
+                Image(
+                    painter = painterResource(id = R.drawable.background),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.Crop
                 )
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
+                        .height(200.dp)
+                ) {
+                    Text(
+                        text = "SHIRU CAFE Aim to provide unique experience to students all across the globe.",
+                        fontWeight = FontWeight.Bold, modifier = Modifier
+                            .padding(horizontal = 50.dp)
+                            .padding(vertical = 25.dp)
+                    )
 
-                Text(text = "Asjddfldsvn vf vjd d dfpjod d f dfbdf bdjb dib dbd bdf bdfib djd d jbdjb dfbjb dfjbjb")
+                    Text(text = "Asjddfldsvn vf vjd d dfpjod d f dfbdf bdjb dib dbd bdf bdfib djd d jbdjb dfbjb dfjbjb")
+                }
             }
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -873,6 +944,50 @@ fun AboutUsPage() {
 
         }
     }
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .fillMaxHeight(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Bottom
+    ) {
+        Row(
+            verticalAlignment = Alignment.Bottom,
+            modifier = Modifier.background(Color.White)
+        ) {
+            Box(Modifier.padding(horizontal = 30.dp)) {
+                Icon(
+                    Icons.Outlined.Home, contentDescription = null,
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .height(50.dp)
+                        .width(50.dp)
+                        .clickable { navController.navigate("home") }
+                )
+            }
+            Box(Modifier.padding(horizontal = 30.dp)) {
+                Icon(
+                    Icons.Outlined.Info, contentDescription = null,
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .height(50.dp)
+                        .width(50.dp)
+                        .clickable { navController.navigate("info") },
+                )
+            }
+            Box(Modifier.padding(horizontal = 30.dp)) {
+                Icon(
+                    Icons.Outlined.QuestionAnswer, contentDescription = null,
+                    modifier = Modifier
+                        .padding(horizontal = 5.dp)
+                        .height(50.dp)
+                        .width(50.dp)
+                        .clickable { navController.navigate("aboutus") }
+                )
+            }
+        }
+
+    }
 }
 
 @Composable
@@ -880,7 +995,7 @@ fun SplashScreenPage(navController: NavHostController) {
     val scale = remember { Animatable(0f) }
 //    val alphaAnim= animateFloatAsState(targetValue = if(startAnimation) 1f else 0f,
 //        animationSpec = tween(durationMillis = 1500)
-//    ) 
+//    )
     LaunchedEffect(key1 = true) {
         scale.animateTo(
             targetValue = 0.6f,
@@ -924,12 +1039,55 @@ fun LemonPage(navController: NavHostController) {
             .fillMaxWidth()
             .fillMaxHeight()
     ) {
+        val scale = remember { Animatable(0f) }
+        LaunchedEffect(key1 = true) {
+            scale.animateTo(
+                targetValue = 1f,
+                animationSpec = tween(durationMillis = 1000, easing = {
+                    OvershootInterpolator(10f).getInterpolation(it)
+                })
+            )
+        }
         Image(
             painter = painterResource(id = R.drawable.colddrinkglass),
             contentDescription = null,
-            Modifier.clip(
-                RoundedCornerShape(90.dp)
+            modifier = Modifier
+                .width(200.dp)
+                .height(200.dp)
+                .scale(scale.value)
+        )
+        Button(onClick = { navController.navigate("image") }) {
+            Text(text = "Click Here to generate the QR Code")
+        }
+
+    }
+
+}
+
+@Composable
+fun HotPage(navController: NavHostController) {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+    ) {
+        val scale = remember { Animatable(0f) }
+        LaunchedEffect(key1 = true) {
+            scale.animateTo(
+                targetValue = 1f,
+                animationSpec = tween(durationMillis = 1000, easing = {
+                    OvershootInterpolator(10f).getInterpolation(it)
+                })
             )
+        }
+        Image(
+            painter = painterResource(id = R.drawable.hotdrinkspage),
+            contentDescription = null,
+            modifier = Modifier
+                .width(200.dp)
+                .height(200.dp)
+                .scale(scale.value)
         )
         Button(onClick = { navController.navigate("image") }) {
             Text(text = "Click Here to generate the QR Code")
