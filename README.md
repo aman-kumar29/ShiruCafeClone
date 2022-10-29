@@ -8,7 +8,7 @@ Concepts USed in the app:
 - Used Navigation Compose to navigate between many windows
 - Added Animation to make the app interactive
 
-#App Download Link
+# App Download Link
 ******
 
 # Contributers:
