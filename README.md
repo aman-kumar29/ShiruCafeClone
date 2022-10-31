@@ -11,24 +11,12 @@ Concepts USed in the app:
 
 # App Download Link
 
-******
+https://drive.google.com/drive/folders/119INRWtUMjvB9IUrsKPtMdiPH-jJOAp3
 
 
-#ScreenShots
+# ScreenShots
 
-!(https://github.com/aman-kumar29/ShiruCafeClone/blob/master/screenshots/shiruvideo.mp4)
-<p float="left">
-  <img src="screenshots/splash.jpg"width=20% height= 20%/>
-  <img src="screenshots/home.jpg"width=20% height=20% /> 
-  <img src="screenshots/selectdrink.jpg" width=20% height=20% />
-  <img src="screenshots/selectcolddrinnk.jpg"width=20% height=20% /> 
-</p>
-<p float="left">
-  <img src="screenshots/generateqr.jpg" width=20% height=20% />
-  <img src="screenshots/qr.jpg"width=20% height= 20%/>
-  <img src="screenshots/about.jpg"width=20% height=20% /> 
-  <img src="screenshots/about2.jpg" width=20% height=20% />
-</p>
+https://user-images.githubusercontent.com/99892898/199029793-53291ad3-b2e3-462c-8410-70fe61da0db3.mp4
 
 
 # Contributers:
