@@ -15,6 +15,8 @@ Concepts USed in the app:
 
 
 #ScreenShots
+
+!(https://github.com/aman-kumar29/ShiruCafeClone/blob/master/screenshots/shiruvideo.mp4)
 <p float="left">
   <img src="screenshots/splash.jpg"width=20% height= 20%/>
   <img src="screenshots/home.jpg"width=20% height=20% /> 
