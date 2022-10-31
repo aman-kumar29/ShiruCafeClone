@@ -13,9 +13,9 @@ Concepts USed in the app:
 --------------------
 ******
 <p float="left">
-  <img src="screenshots/splash.jpg"width=30% height=30%/>
-  <img src="screenshots/home.jpg"width=30% height=30% /> 
-  <img src="screenshots/selectdrink.jpg" width=30% height=30% />
+  <img src="screenshots/splash.jpg"width=9% height= 8%/>
+  <img src="screenshots/home.jpg"width=9% height=8% /> 
+  <img src="screenshots/selectdrink.jpg" width=9% height=8% />
 </p>
 
 
