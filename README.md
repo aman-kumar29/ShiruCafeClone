@@ -14,8 +14,7 @@ Concepts USed in the app:
 ******
 
 <img
-  src="screenshots/splash.jpg"
-  style="display:max-height: 80px; margin: 0 auto; max-width: 40px">
+  src="screenshots/splash.jpg" width=30% height=30%>
 
 # Contributers:
 -----------------
