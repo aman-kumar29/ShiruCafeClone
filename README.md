@@ -14,6 +14,11 @@ Concepts USed in the app:
 ******
 
 ![My Image](screenshots/splash.jpg)
+<img
+  src="screenshots/splash.jpg"
+  alt="Alt text"
+  title="Optional title"
+  style="display:max-height; margin: 0 auto; max-width: 300px">
 
 # Contributers:
 -----------------
