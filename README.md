@@ -13,6 +13,8 @@ Concepts USed in the app:
 --------------------
 ******
 
+![My Image](screenshots/splash.jpg)
+
 # Contributers:
 -----------------
 1. Aman Kumar
