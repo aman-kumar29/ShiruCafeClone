@@ -19,11 +19,6 @@ https://user-images.githubusercontent.com/108022893/199030519-1a3453ec-77b8-4b87
 
 
 
-# App Download Link- 
-https://drive.google.com/drive/folders/119INRWtUMjvB9IUrsKPtMdiPH-jJOAp3 
---------------------
-******
-
 
 
 # Contributers:
