@@ -840,14 +840,15 @@ fun AboutUsPage(navController: NavHostController) {
         ) {
             Box(Modifier.fillMaxWidth()) {
                 Image(
-                    painter = painterResource(id = R.drawable.home), contentDescription = null,
+                    painter = painterResource(id = R.drawable.people1
+                    ), contentDescription = null,
                     contentScale = ContentScale.Crop, modifier = Modifier.fillMaxWidth()
                 )
                 Text(
-                    text = "WELCOME TO SHIRU CAFE !",
+                    text = "WELCOME TO SHIRU CAFE !",color=Color.White,
                     modifier = Modifier
                         .wrapContentWidth(Alignment.CenterHorizontally)
-                        .padding(start = 75.dp)
+                        .padding(start = 50.dp), fontSize = 21.sp, fontWeight = FontWeight.ExtraBold
                 )
             }
             Box() {
@@ -860,45 +861,23 @@ fun AboutUsPage(navController: NavHostController) {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
-                        .height(200.dp)
+                        .height(250.dp)
                 ) {
                     Text(
                         text = "SHIRU CAFE Aim to provide unique experience to students all across the globe.",
                         fontWeight = FontWeight.Bold, modifier = Modifier
                             .padding(horizontal = 50.dp)
-                            .padding(vertical = 25.dp)
+                            .padding(vertical = 25.dp),
+                        textAlign = TextAlign.Center
                     )
 
-                    Text(text = "Asjddfldsvn vf vjd d dfpjod d f dfbdf bdjb dib dbd bdf bdfib djd d jbdjb dfbjb dfjbjb")
-                }
-            }
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center,
-                modifier = Modifier
-                    .height(200.dp)
-                    .background(color = Color.Gray)
-                    .fillMaxWidth()
-            ) {
-                Text(text = "BOLD")
-                Text(text = "Normal")
-                Row(Modifier.padding(20.dp)) {
-                    Icon(
-                        Icons.Outlined.Computer, contentDescription = null,
-                        modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
-//                   , RoundedCornerShape(15.dp)
+                    Text(
+                        text = "Since Our founding in 2013 our goal has been to create a welcoming extension of the university campus.",
+                        textAlign = TextAlign.Center
                     )
-                    Text(text = "OR")
-                    Icon(
-                        Icons.Outlined.OfflinePin, contentDescription = null,
-                        modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
-//                   , RoundedCornerShape(15.dp)
+                    Text(
+                        text = "Shiru Cafe Partners with leading local and global companies to bring unique opportunities to each cafe and the change the way students learn about the professional world and begin their career.",
+                        textAlign = TextAlign.Center
                     )
 
                 }
@@ -907,37 +886,98 @@ fun AboutUsPage(navController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center,
                 modifier = Modifier
-                    .height(200.dp)
+                    .height(250.dp)
                     .background(color = Color.LightGray)
                     .fillMaxWidth()
             ) {
-                Text(text = "BOLD")
-                Text(text = "Normal")
+                Text(
+                    text = "SHIRU CAFE'S Benefits",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 21.sp,
+                    textAlign = TextAlign.Center, modifier = Modifier.padding(bottom = 10.dp)
+                )
+                Text(
+                    text = "In our cafe's student learn more about their industries and specialisation in their field while networking and participating in internships and workshops",
+                    textAlign = TextAlign.Center
+                )
                 Row(Modifier.padding(20.dp)) {
-                    Icon(
-                        Icons.Outlined.Coffee, contentDescription = null,
-                        modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
+                    Column() {
+                        Icon(
+                            Icons.Outlined.Computer, contentDescription = null,
+                            modifier = Modifier
+                                .padding(horizontal = 6.dp)
+                                .height(60.dp)
+                                .width(60.dp)
 //                   , RoundedCornerShape(15.dp)
-                    )
-                    Icon(
-                        Icons.Outlined.Wifi, contentDescription = null,
-                        modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
+                        )
+                        Text(text = "ONLINE")
+                    }
+                    Text(text = "OR")
+                    Column() {
+                        Icon(
+                            Icons.Outlined.OfflinePin, contentDescription = null,
+                            modifier = Modifier
+                                .padding(horizontal = 2.dp)
+                                .height(60.dp)
+                                .width(60.dp)
 //                   , RoundedCornerShape(15.dp)
-                    )
-                    Icon(
-                        Icons.Outlined.BatteryChargingFull, contentDescription = null,
-                        modifier = Modifier
-                            .padding(horizontal = 2.dp)
-                            .height(60.dp)
-                            .width(60.dp)
+                        )
+                        Text(text = "OFFLINE")
+                    }
+
+                }
+            }
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier
+                    .height(350.dp)
+                    .background(color = Color.Gray)
+                    .fillMaxWidth()
+            ) {
+                Text(text = "Available Services: ", fontWeight = FontWeight.Bold, fontSize = 21.sp, modifier = Modifier.padding(bottom = 10.dp))
+                Text(
+                    text = "Shiru Cafe offers freshly brewed coffee for free." +
+                            "This Services are provided by the support of the sponsoring Companies"
+                , textAlign = TextAlign.Center)
+                Row(Modifier.padding(20.dp)) {
+                    Column {
+                        Icon(
+                            Icons.Outlined.Coffee, contentDescription = null,
+                            modifier = Modifier
+                                .padding(horizontal = 2.dp)
+                                .height(60.dp)
+                                .width(60.dp)
 //                   , RoundedCornerShape(15.dp)
-                    )
+                        )
+                        Text(text = "Free ")
+                        Text(text = "Drinks")
+                    }
+                    Column() {
+                        Icon(
+                            Icons.Outlined.Wifi, contentDescription = null,
+                            modifier = Modifier
+                                .padding(horizontal = 2.dp)
+                                .height(60.dp)
+                                .width(60.dp)
+//                   , RoundedCornerShape(15.dp)
+                        )
+                        Text(text = "Free")
+                        Text(text = "WIFI")
+                    }
+                    Column() {
+                        Icon(
+                            Icons.Outlined.BatteryChargingFull, contentDescription = null,
+                            modifier = Modifier
+                                .padding(horizontal = 2.dp)
+                                .height(60.dp)
+                                .width(60.dp)
+//                   , RoundedCornerShape(15.dp)
+                        )
+                        Text(text = "Charging ")
+                        Text(text = "Outlet")
+                    }
+
 
                 }
             }
