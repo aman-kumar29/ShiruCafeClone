@@ -10,10 +10,6 @@ Concepts Used in the app:
 - Added Animation to make the app interactive
 
 
-# App Download Link
-
-https://drive.google.com/drive/folders/119INRWtUMjvB9IUrsKPtMdiPH-jJOAp3
-
 
 
 # Presentation of the application through video clip - 
