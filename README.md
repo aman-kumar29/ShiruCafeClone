@@ -10,8 +10,11 @@ Concepts USed in the app:
 - Added Animation to make the app interactive
 
 # App Download Link
---------------------
+
 ******
+
+
+#ScreenShots
 <p float="left">
   <img src="screenshots/splash.jpg"width=20% height= 20%/>
   <img src="screenshots/home.jpg"width=20% height=20% /> 
