@@ -12,15 +12,13 @@ Concepts USed in the app:
 # App Download Link
 --------------------
 ******
-
-<img
-  src="screenshots/splash.jpg" width=30% height=30%>
 <p float="left">
   <img src="screenshots/splash.jpg" width="100" width=30% height=30%/>
   <img src="screenshots/home.jpg" width="100" width=30% height=30% /> 
   <img src="screenshots/selectdrink.jpg" width="100" width=30% height=30% />
-  <img src="screenshots/selectcolddrink.jpg" width="100" width=30% height=30% />
 </p>
+
+
 # Contributers:
 -----------------
 1. Aman Kumar
