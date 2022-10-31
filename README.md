@@ -25,5 +25,5 @@ https://drive.google.com/drive/folders/119INRWtUMjvB9IUrsKPtMdiPH-jJOAp3
 # Contributers:
 -----------------
 1. Aman Kumar
-2. Aditya LAhane
+2. Aditya Lahane
 
