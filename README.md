@@ -16,10 +16,10 @@ Concepts USed in the app:
   <img src="screenshots/splash.jpg"width=20% height= 20%/>
   <img src="screenshots/home.jpg"width=20% height=20% /> 
   <img src="screenshots/selectdrink.jpg" width=20% height=20% />
-  <img src="screenshots/selectcolddrink.jpg"width=20% height=20% /> 
-  <img src="screenshots/generateqr.jpg" width=20% height=20% />
+  <img src="screenshots/selectcolddrinnk.jpg"width=20% height=20% /> 
 </p>
 <p float="left">
+  <img src="screenshots/generateqr.jpg" width=20% height=20% />
   <img src="screenshots/qr.jpg"width=20% height= 20%/>
   <img src="screenshots/about.jpg"width=20% height=20% /> 
   <img src="screenshots/about2.jpg" width=20% height=20% />
