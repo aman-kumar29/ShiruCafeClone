@@ -9,17 +9,7 @@ Concepts Used in the app:
 - Used Navigation Compose to navigate between many windows
 - Added Animation to make the app interactive
 
-# Presentation of the application through video clip - 
 
-
-https://user-images.githubusercontent.com/108022893/199030519-1a3453ec-77b8-4b87-83c0-61fa648589c3.mp4
-
-
-
-# App Download Link- 
-https://drive.google.com/drive/folders/119INRWtUMjvB9IUrsKPtMdiPH-jJOAp3 
---------------------
-******
 
 # Contributers:
 -----------------
